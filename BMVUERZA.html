@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartel Del Vuerza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:#030303;
+  color:white;
+  text-align:center;
+}
+
+/* LOADING */
+#loader{
+  position:fixed;inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  animation:fadeOut 1s ease 2s forwards;
+}
+.loader-text{color:red;letter-spacing:3px}
+@keyframes fadeOut{to{opacity:0;visibility:hidden}}
+
+/* ACCESS */
+#access{
+  position:fixed;inset:0;
+  background:black;
+  color:#00ff00;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2em;
+  opacity:0;
+  z-index:9998;
+  animation:showAccess 1s ease 2.1s forwards, hideAccess 1s ease 4s forwards;
+}
+@keyframes showAccess{to{opacity:1}}
+@keyframes hideAccess{to{opacity:0;visibility:hidden}}
+
+header{
+  padding:30px;
+  background:#070707;
+  border-bottom:1px solid red;
+}
+header h1{color:red;margin:0}
+header p{color:#777}
+
+h2{color:#ff2e2e;margin-top:30px}
+
+.container{
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+}
+
+/* CARD */
+.card{
+  background:linear-gradient(145deg,#0a0a0a,#141414);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,0,0,0.4);
+  box-shadow:0 0 25px rgba(255,0,0,.2);
+  cursor:pointer;
+  transition:.3s;
+}
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 40px rgba(255,0,0,.8);
+}
+
+/* AVATAR */
+.avatar{
+  width:60px;height:60px;
+  border-radius:50%;
+  background:#111;
+  border:2px solid rgba(255,0,0,0.5);
+  margin:0 auto 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  color:#777;
+  box-shadow:0 0 10px rgba(255,0,0,.3);
+}
+
+/* TEXT */
+.name{color:#ff3b3b;font-size:1.3em}
+.number{
+  color:#00ffcc;
+  letter-spacing:3px;
+  text-shadow:0 0 10px #00ffcc;
+}
+.job{color:#aaa;font-size:.85em}
+.rank{color:#00ffcc;font-size:.75em}
+
+.glitch{
+  animation:glitch .7s infinite;
+}
+@keyframes glitch{
+  0%{transform:translate(0)}
+  20%{transform:translate(-2px)}
+  40%{transform:translate(2px)}
+  60%{transform:translate(-1px)}
+  80%{transform:translate(1px)}
+  100%{transform:translate(0)}
+}
+
+.warning{
+  color:red;
+  animation:pulse 1s infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1}
+  50%{opacity:.4}
+}
+
+footer{
+  padding:20px;
+  color:#555;
+  border-top:1px solid red;
+}
+
+@media (max-width:600px){
+
+  h1{
+    font-size:1.8em;
+  }
+
+  h2{
+    font-size:1.2em;
+  }
+
+  .card{
+    padding:15px;
+  }
+
+  .name{
+    font-size:1.1em;
+  }
+
+  .number{
+    font-size:1em;
+  }
+
+  .job{
+    font-size:0.8em;
+  }
+
+  .rank{
+    font-size:0.7em;
+  }
+
+  .avatar{
+    width:50px;
+    height:50px;
+    font-size:20px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+  <div class="loader-text">Connecting to Blackmarket...</div>
+</div>
+
+<div id="access">ACCESS GRANTED</div>
+
+<header>
+  <h1>Cartel Del Vuerza</h1>
+  <p>Encrypted Blackmarket Network</p>
+</header>
+
+<h2>Vuerza Management</h2>
+<div class="container">
+
+<div class="card" onclick="copyNumber('88252')">
+  <div class="avatar">👤</div>
+  <div class="name">Ajiz Kacung</div>
+  <div class="number">☠ 88252</div>
+  <div class="job">Arms Dealer</div>
+  <div class="rank">Vuerza Management</div>
+</div>
+
+<div class="card" onclick="copyNumber('2112')">
+  <div class="avatar">👤</div>
+  <div class="name">El Cuete</div>
+  <div class="number">☠ 2112</div>
+  <div class="job">Arms Dealer</div>
+  <div class="rank">Vuerza Management</div>
+</div>
+
+<div class="card" onclick="copyNumber('5551')">
+  <div class="avatar">👤</div>
+  <div class="name">El Miro</div>
+  <div class="number">☠ 5551</div>
+  <div class="job">Drugs Dealer</div>
+  <div class="rank">Vuerza Management</div>
+</div>
+
+</div>
+
+
+<h2>Operatives</h2>
+<div class="container">
+
+<div class="card" onclick="copyNumber('23933')">
+  <div class="avatar">👤</div>
+  <div class="name">Emmiliano</div>
+  <div class="number">☠ 23933</div>
+  <div class="job">Arms Dealer</div>
+  <div class="rank">Halcon</div>
+</div>
+
+<div class="card" onclick="copyNumber('171200')">
+  <div class="avatar">👤</div>
+  <div class="name">Baron El Copa</div>
+  <div class="number">☠ 171200</div>
+  <div class="job">All Dealer</div>
+  <div class="rank">Jefe De Sicario</div>
+</div>
+
+<div class="card" onclick="copyNumber('77417')">
+  <div class="avatar">👤</div>
+  <div class="name">El KusKus</div>
+  <div class="number">☠ 77417</div>
+  <div class="job">Field Operative</div>
+  <div class="rank">Sicario</div>
+</div>
+
+</div>
+
+<h2>Blackmarket Pricelist</h2>
+<div class="container">
+
+<div class="card">
+  <div class="name warning">Weapon Market</div>
+  <div class="job glitch">
+    Colt 45 : $7.970 - $8.030<br>
+    Country Rifle : $9.960 - $10.040<br>
+    Silenced : $14.940 - $15.060<br>
+    Shotgun : $19.920 - $20.080<br>
+    Desert Eagle : $24.900 - $25.100<br>
+    MP5 : $49.800 - $50.200<br>
+    Sawn Off : $59.760 - $60.240<br>
+    AK47 : $69.720 - $70.280
+  </div>
+</div>
+
+<div class="card">
+  <div class="name warning">Ammo Supply</div>
+  <div class="job glitch">
+    Normal : $4.980 - $5.020 /100<br>
+    Hollow Point : $8.960 - $9.040 /100<br>
+    Surplus : $6.970 - $7.030 /100
+  </div>
+</div>
+
+<div class="card">
+  <div class="name warning">Special Supply</div>
+  <div class="job glitch">
+    Steroid : $12.000 - $15.000<br>
+    Marijuana : $8.000 - $11.000<br>
+    Cocaine : $20.000 - $30.000
+  </div>
+</div>
+
+</div>
+
+<footer>
+⚠ Price may change anytime | System Monitoring Active
+</footer>
+
+<audio id="bgAudio" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c8c0c5b9b.mp3?filename=dark-ambient-110624.mp3">
+</audio>
+
+<script>
+function copyNumber(num){
+  navigator.clipboard.writeText(num);
+}
+
+const audio = document.getElementById('bgAudio');
+document.addEventListener('click',()=>{
+  audio.volume=0.4;
+  audio.play();
+},{once:true});
+</script>
+
+</body>
+</html>
