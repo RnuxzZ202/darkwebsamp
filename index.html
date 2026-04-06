@@ -78,7 +78,7 @@ h2{color:#ff2e2e;margin-top:30px}
   box-shadow:0 0 40px rgba(255,0,0,.8);
 }
 
-/* AVATAR */
+/* AVATAR V */
 .avatar{
   width:60px;
   height:60px;
@@ -105,11 +105,14 @@ h2{color:#ff2e2e;margin-top:30px}
   text-shadow:0 0 10px #00ffcc;
 }
 .job{color:#aaa;font-size:.85em}
-.rank{color:#00ffcc;font-size:.75em}
-
-.glitch{
-  animation:glitch .7s infinite;
+.rank{
+  color:#00ffcc;
+  font-size:.75em;
+  text-shadow:0 0 8px #00ffcc;
 }
+
+/* EFFECT */
+.glitch{animation:glitch .7s infinite;}
 @keyframes glitch{
   0%{transform:translate(0)}
   20%{transform:translate(-2px)}
@@ -134,42 +137,12 @@ footer{
   border-top:1px solid red;
 }
 
+/* MOBILE */
 @media (max-width:600px){
-
-  h1{
-    font-size:1.8em;
-  }
-
-  h2{
-    font-size:1.2em;
-  }
-
-  .card{
-    padding:15px;
-  }
-
-  .name{
-    font-size:1.1em;
-  }
-
-  .number{
-    font-size:1em;
-  }
-
-  .job{
-    font-size:0.8em;
-  }
-
-  .rank{
-    font-size:0.7em;
-  }
-
-  .avatar{
-    width:50px;
-    height:50px;
-    font-size:20px;
-  }
-
+  h1{font-size:1.8em;}
+  h2{font-size:1.2em;}
+  .card{padding:15px;}
+  .avatar{width:50px;height:50px;font-size:20px;}
 }
 </style>
 </head>
@@ -195,7 +168,7 @@ footer{
   <div class="name">Ajiz Kacung</div>
   <div class="number">☠ 88252</div>
   <div class="job">Arms Dealer</div>
-  <div class="rank">Vuerza Management</div>
+  <div class="rank">☠ Vuerza Management</div>
 </div>
 
 <div class="card" onclick="copyNumber('2112')">
@@ -203,7 +176,7 @@ footer{
   <div class="name">El Cuete</div>
   <div class="number">☠ 2112</div>
   <div class="job">Arms Dealer</div>
-  <div class="rank">Vuerza Management</div>
+  <div class="rank">☠ Vuerza Management</div>
 </div>
 
 <div class="card" onclick="copyNumber('5551')">
@@ -211,11 +184,10 @@ footer{
   <div class="name">El Miro</div>
   <div class="number">☠ 5551</div>
   <div class="job">Drugs Dealer</div>
-  <div class="rank">Vuerza Management</div>
+  <div class="rank">☠ Vuerza Management</div>
 </div>
 
 </div>
-
 
 <h2>Operatives</h2>
 <div class="container">
@@ -225,7 +197,7 @@ footer{
   <div class="name">Emmiliano</div>
   <div class="number">☠ 23933</div>
   <div class="job">Kacung ElCopa</div>
-  <div class="rank">Sicario</div>
+  <div class="rank">⚔ Sicario</div>
 </div>
 
 <div class="card" onclick="copyNumber('171200')">
@@ -233,7 +205,7 @@ footer{
   <div class="name">Baron El Copa</div>
   <div class="number">☠ 171200</div>
   <div class="job">All Dealer</div>
-  <div class="rank">Jefe De Sicario</div>
+  <div class="rank">👁 Jefe De Sicario</div>
 </div>
 
 <div class="card" onclick="copyNumber('77417')">
@@ -241,7 +213,7 @@ footer{
   <div class="name">El KusKus</div>
   <div class="number">☠ 77417</div>
   <div class="job">Arms Dealer</div>
-  <div class="rank">Sicario</div>
+  <div class="rank">⚔ Sicario</div>
 </div>
 
 </div>
@@ -287,8 +259,9 @@ footer{
 ⚠ Price may change anytime | System Monitoring Active
 </footer>
 
+<!-- AUDIO -->
 <audio id="bgAudio" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c8c0c5b9b.mp3?filename=dark-ambient-110624.mp3">
+  <source src="Backsound.mp3">
 </audio>
 
 <script>
@@ -297,10 +270,22 @@ function copyNumber(num){
 }
 
 const audio = document.getElementById('bgAudio');
-document.addEventListener('click',()=>{
-  audio.volume=0.4;
+
+document.addEventListener('click', () => {
+  audio.volume = 0;
   audio.play();
-},{once:true});
+
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 0.4) {
+      vol += 0.02;
+      audio.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+
+}, { once: true });
 </script>
 
 </body>
