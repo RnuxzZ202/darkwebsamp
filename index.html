@@ -111,48 +111,6 @@ h2{color:#ff2e2e;margin-top:30px}
   text-shadow:0 0 8px #00ffcc;
 }
 
-/* GALLERY */
-.gallery{
-  padding:20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-}
-
-.photo{
-  position:relative;
-  border-radius:15px;
-  overflow:hidden;
-  border:1px solid rgba(255,0,0,0.4);
-  box-shadow:0 0 20px rgba(255,0,0,.2);
-  cursor:pointer;
-  transition:.3s;
-}
-
-.photo:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 40px red;
-}
-
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(0.7);
-}
-
-.photo span{
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:10px;
-  background:linear-gradient(transparent,black);
-  color:red;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-  
 /* EFFECT */
 .glitch{animation:glitch .7s infinite;}
 @keyframes glitch{
@@ -203,6 +161,9 @@ footer{
 </header>
 
 <h2>Vuerza Management</h2>
+   <div class="photo">
+    <img src="ye12.jpg">
+  </div>
 <div class="container">
 
 <div class="card" onclick="copyNumber('88252')">
@@ -293,20 +254,6 @@ footer{
     Marijuana : $80/1 Marijuana <br>
     Cocaine : $240/1 Cocaine
   </div>
-</div>
-
-  <div class="card">
-  <h2>Gallery</h2>
-<div class="gallery">
-
-  <div class="photo">
-    <img src="ye12.jpg">
-  </div>
-
-  <div class="photo">
-    <img src="samp_05_04_2026_02_47_29.png">
-  </div>
-
 </div>
 
 </div>
